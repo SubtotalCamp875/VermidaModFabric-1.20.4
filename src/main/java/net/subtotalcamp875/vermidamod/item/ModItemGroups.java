@@ -36,12 +36,21 @@ public class ModItemGroups {
                         entries.add(ModItems.VERY_CONDENSED_SHAMAN_BLOOD);
                         entries.add(ModItems.EXTREMELY_CONDENSED_SHAMAN_BLOOD);
 
+                        entries.add(ModItems.MAGIC_HELMET);
+                        entries.add(ModItems.MAGIC_CHESTPLATE);
+                        entries.add(ModItems.MAGIC_LEGGINGS);
+                        entries.add(ModItems.MAGIC_BOOTS);
+
+                        entries.add(ModItems.ECHOS_OF_SUMMONS_MUSIC_DISC);
+                        entries.add(ModItems.BRONZE_SHAMAN_CAMP_AMBIENCE_MUSIC_DISC);
+
                         entries.add(ModItems.GLASS_DUST);
                         entries.add(ModItems.SCROLL);
 
                         entries.add(ModBlocks.SUMMONING_CRYSTAL_BLOCK);
                         entries.add(ModBlocks.BRONZE_REFINER_BLOCK);
                         entries.add(ModBlocks.SEAL_BREAKER_BLOCK);
+                        entries.add(ModBlocks.BLOOD_CONDENSING_STATION_BLOCK);
 
 
                     }).build());

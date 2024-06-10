@@ -13,6 +13,7 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.subtotalcamp875.vermidamod.VermidaModFabric;
+import net.subtotalcamp875.vermidamod.block.custom.BloodCondensingStationBlock;
 import net.subtotalcamp875.vermidamod.block.custom.bronze_refiner_block;
 
 public class ModBlocks {
@@ -23,6 +24,8 @@ public class ModBlocks {
     public static final Block BRONZE_REFINER_BLOCK = registerBlock("bronze_refiner_block",
             new bronze_refiner_block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).sounds(BlockSoundGroup.COPPER)));
 
+    public static final Block BLOOD_CONDENSING_STATION_BLOCK = registerBlock("blood_condensing_station_block",
+            new BloodCondensingStationBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).nonOpaque().sounds(BlockSoundGroup.ANVIL)));
 
 
     private static Block registerBlock(String name, Block block) {
