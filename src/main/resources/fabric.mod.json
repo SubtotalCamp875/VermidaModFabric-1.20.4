@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "vermida_mod",
+	"version": "${version}",
+	"name": "VermidaModFabric-1.20.4",
+	"description": "VermidaMod made in Fabric!",
+	"authors": [
+		"SubtotalCamp875"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/vermidamodfabric-1204/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.subtotalcamp875.vermidamod.VermidaModFabric"
+		],
+		"client": [
+			"net.subtotalcamp875.vermidamod.VermidaModFabricClient"
+		],
+		"fabric-datagen": [
+			"net.subtotalcamp875.vermidamod.VermidaModFabricDataGenerator"
+		]
+	},
+	"mixins": [
+		"vermidamodfabric.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.15.11",
+		"minecraft": "~1.20.4",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
