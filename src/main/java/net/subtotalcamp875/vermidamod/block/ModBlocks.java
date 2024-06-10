@@ -2,6 +2,7 @@ package net.subtotalcamp875.vermidamod.block;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.ExperienceDroppingBlock;
 import net.minecraft.item.BlockItem;
@@ -9,8 +10,10 @@ import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.subtotalcamp875.vermidamod.VermidaModFabric;
+import net.subtotalcamp875.vermidamod.block.custom.bronze_refiner_block;
 
 public class ModBlocks {
     public static final Block SUMMONING_CRYSTAL_BLOCK = registerBlock("summoning_crystal_block",
@@ -18,7 +21,7 @@ public class ModBlocks {
     public static final Block SEAL_BREAKER_BLOCK = registerBlock("seal_breaker_block",
             new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).sounds(BlockSoundGroup.CHAIN)));
     public static final Block BRONZE_REFINER_BLOCK = registerBlock("bronze_refiner_block",
-            new bronze_reginer_block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).sounds(BlockSoundGroup.COPPER)));
+            new bronze_refiner_block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).sounds(BlockSoundGroup.COPPER)));
 
 
 

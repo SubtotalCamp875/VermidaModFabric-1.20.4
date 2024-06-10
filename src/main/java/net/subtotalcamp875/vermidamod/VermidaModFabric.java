@@ -2,6 +2,10 @@ package net.subtotalcamp875.vermidamod;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.registry.FuelRegistry;
+import net.subtotalcamp875.vermidamod.block.ModBlocks;
+import net.subtotalcamp875.vermidamod.item.ModItemGroups;
+import net.subtotalcamp875.vermidamod.item.ModItems;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -11,6 +15,9 @@ public class VermidaModFabric implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		ModItemGroups.registerItemGroups();
 
+		ModItems.registerModItems();
+		ModBlocks.registerModBlocks();
 	}
 }

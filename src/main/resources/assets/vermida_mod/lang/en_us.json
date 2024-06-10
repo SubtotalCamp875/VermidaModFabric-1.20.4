@@ -1,0 +1,31 @@
+{
+  "item.vermida_mod.sapphire": "Sapphire",
+  "item.vermida_mod.metal_detector": "Metal Detector",
+
+  "item.vermida_mod.summoning_essence": "Summoning Essence",
+  "item.vermida_mod.summoning_crystal": "Summoning Crystal",
+
+  "item.vermida_mod.bronze_key": "Bronze Key",
+  "item.vermida_mod.bronze_core": "Bronze Core",
+  "item.vermida_mod.compact_bronze_core": "Compact Bronze Core",
+  "item.vermida_mod.reinforced_bronze_core": "Reinforced Bronze Core",
+  "item.vermida_mod.reinforced_compact_bronze_core": "Reinforced Compact Bronze Core",
+
+  "item.vermida_mod.shaman_blood": "Shaman Blood",
+  "item.vermida_mod.slightly_condensed_shaman_blood": "Slightly Condensed Shaman Blood",
+  "item.vermida_mod.lightly_condensed_shaman_blood": "Lightly Condensed Shaman Blood",
+  "item.vermida_mod.condensed_shaman_blood": "Condensed Shaman Blood",
+  "item.vermida_mod.very_condensed_shaman_blood": "Very Condensed Shaman Blood",
+  "item.vermida_mod.extremely_condensed_shaman_blood": "Extremely Condensed Shaman Blood",
+
+  "item.vermida_mod.glass_dust": "Glass Dust",
+  "item.vermida_mod.scroll": "Scroll",
+
+
+  "block.vermida_mod.summoning_crystal_block": "Summoning Crystal Block",
+  "block.vermida_mod.seal_breaker_block": "Seal Breaker",
+  "block.vermida_mod.bronze_refiner_block": "Bronze Refiner",
+
+
+  "itemgroup.sapphire": "Vermida Mod Group"
+}
