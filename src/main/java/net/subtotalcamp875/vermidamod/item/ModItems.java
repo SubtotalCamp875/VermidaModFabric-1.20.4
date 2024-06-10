@@ -3,13 +3,16 @@ package net.subtotalcamp875.vermidamod.item;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
+import net.minecraft.item.MusicDiscItem;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.subtotalcamp875.vermidamod.VermidaModFabric;
 import net.minecraft.util.Identifier;
 import net.subtotalcamp875.vermidamod.item.custom.MetalDetectorItem;
+import net.subtotalcamp875.vermidamod.sound.ModSounds;
 
 public class ModItems {
     public static final Item SAPPHIRE = registerItem("sapphire", new Item(new FabricItemSettings()));
@@ -41,10 +44,24 @@ public class ModItems {
             new Item(new FabricItemSettings().food(ModFoodComponents.EXTREMELY_CONDENSED_SHAMAN_BLOOD).maxCount(16)));
 
 
+    public static final Item MAGIC_HELMET = registerItem("magic_helmet",
+            new ArmorItem(ModArmorMaterials.SUMMONING_CRYSTAL, ArmorItem.Type.HELMET, new FabricItemSettings()));
+    public static final Item MAGIC_CHESTPLATE = registerItem("magic_chestplate",
+            new ArmorItem(ModArmorMaterials.SUMMONING_CRYSTAL, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
+    public static final Item MAGIC_LEGGINGS = registerItem("magic_leggings",
+            new ArmorItem(ModArmorMaterials.SUMMONING_CRYSTAL, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
+    public static final Item MAGIC_BOOTS = registerItem("magic_boots",
+            new ArmorItem(ModArmorMaterials.SUMMONING_CRYSTAL, ArmorItem.Type.BOOTS, new FabricItemSettings()));
+
+
     public static final Item GLASS_DUST = registerItem("glass_dust", new Item(new FabricItemSettings()));
     public static final Item SCROLL = registerItem("scroll", new Item(new FabricItemSettings()));
 
 
+    public static final Item ECHOS_OF_SUMMONS_MUSIC_DISC  = registerItem("echos_of_summons_music_disc",
+            new MusicDiscItem(6, ModSounds.ECHOS_OF_SUMMONS, new FabricItemSettings().maxCount(1), 2120));
+    public static final Item BRONZE_SHAMAN_CAMP_AMBIENCE_MUSIC_DISC   = registerItem("bronze_shaman_camp_ambience_music_disc",
+            new MusicDiscItem(6, ModSounds.BRONZE_SHAMAN_CAMP_AMBIENCE, new FabricItemSettings().maxCount(1), 3300));
 
 
     private static void addItemsToIngredientItemGroup(FabricItemGroupEntries entries) {
