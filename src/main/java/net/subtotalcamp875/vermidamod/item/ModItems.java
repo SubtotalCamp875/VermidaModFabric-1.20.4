@@ -65,6 +65,8 @@ public class ModItems {
 
     public static final Item LEATHER_SUMMON_SPAWN_EGG = registerItem("leather_summon_spawn_egg",
             new SpawnEggItem(ModEntities.LEATHER_SUMMON, 0xa86518, 0x3b260f, new FabricItemSettings()));
+    public static final Item BRONZE_SHAMAN_SPAWN_EGG = registerItem("bronze_shaman_spawn_egg",
+            new SpawnEggItem(ModEntities.BRONZE_SHAMAN, 0xa86518, 0x3b260f, new FabricItemSettings()));
 
 
     private static void addItemsToIngredientItemGroup(FabricItemGroupEntries entries) {

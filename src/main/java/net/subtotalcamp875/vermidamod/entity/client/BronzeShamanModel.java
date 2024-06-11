@@ -1,89 +1,31 @@
+package net.subtotalcamp875.vermidamod.entity.client;
+
 import net.minecraft.client.model.*;
 import net.minecraft.client.render.VertexConsumer;
+import net.minecraft.client.render.entity.model.SinglePartEntityModel;
 import net.minecraft.client.util.math.MatrixStack;
-/**
+import net.minecraft.util.math.MathHelper;
+import net.subtotalcamp875.vermidamod.entity.animation.ModAnimations;
+import net.subtotalcamp875.vermidamod.entity.custom.BronzeShamanEntity;
+import net.subtotalcamp875.vermidamod.entity.custom.LeatherSummonEntity;
+
 // Made with Blockbench 4.10.3
 // Exported for Minecraft version 1.17+ for Yarn
 // Paste this class into your mod and generate all required imports
-public class modded_entity extends EntityModel<Entity> {
-	private final ModelPart bronze_shaman_entity;
+public class BronzeShamanModel<T extends BronzeShamanEntity> extends SinglePartEntityModel<T> {
+	private final ModelPart bronze_shaman;
 	private final ModelPart head;
-	private final ModelPart hat;
-	private final ModelPart body;
-	private final ModelPart left_arm;
-	private final ModelPart right_arm;
-	private final ModelPart bronze_staff;
-	private final ModelPart staff_arch;
-	private final ModelPart left_leg;
-	private final ModelPart right_leg;
-	private final ModelPart healing;
-	private final ModelPart circle;
-	private final ModelPart circle_1;
-	private final ModelPart circle_2;
-	private final ModelPart circle_3;
-	private final ModelPart circle_4;
-	private final ModelPart circle_5;
-	private final ModelPart circle_6;
-	private final ModelPart circle_7;
-	private final ModelPart circle_8;
-	private final ModelPart healing_particles;
-	private final ModelPart particle_1;
-	private final ModelPart particle_2;
-	private final ModelPart particle_3;
-	private final ModelPart particle_4;
-	private final ModelPart particle_5;
-	private final ModelPart particle_6;
-	private final ModelPart attacking;
-	private final ModelPart attacking_particles;
-	private final ModelPart particle_7;
-	private final ModelPart particle_8;
-	private final ModelPart particle_9;
-	private final ModelPart particle_10;
-	private final ModelPart particle_11;
-	private final ModelPart particle_12;
-	public modded_entity(ModelPart root) {
-		this.bronze_shaman_entity = root.getChild("bronze_shaman_entity");
-		this.head = root.getChild("head");
-		this.hat = root.getChild("hat");
-		this.body = root.getChild("body");
-		this.left_arm = root.getChild("left_arm");
-		this.right_arm = root.getChild("right_arm");
-		this.bronze_staff = root.getChild("bronze_staff");
-		this.staff_arch = root.getChild("staff_arch");
-		this.left_leg = root.getChild("left_leg");
-		this.right_leg = root.getChild("right_leg");
-		this.healing = root.getChild("healing");
-		this.circle = root.getChild("circle");
-		this.circle_1 = root.getChild("circle_1");
-		this.circle_2 = root.getChild("circle_2");
-		this.circle_3 = root.getChild("circle_3");
-		this.circle_4 = root.getChild("circle_4");
-		this.circle_5 = root.getChild("circle_5");
-		this.circle_6 = root.getChild("circle_6");
-		this.circle_7 = root.getChild("circle_7");
-		this.circle_8 = root.getChild("circle_8");
-		this.healing_particles = root.getChild("healing_particles");
-		this.particle_1 = root.getChild("particle_1");
-		this.particle_2 = root.getChild("particle_2");
-		this.particle_3 = root.getChild("particle_3");
-		this.particle_4 = root.getChild("particle_4");
-		this.particle_5 = root.getChild("particle_5");
-		this.particle_6 = root.getChild("particle_6");
-		this.attacking = root.getChild("attacking");
-		this.attacking_particles = root.getChild("attacking_particles");
-		this.particle_7 = root.getChild("particle_7");
-		this.particle_8 = root.getChild("particle_8");
-		this.particle_9 = root.getChild("particle_9");
-		this.particle_10 = root.getChild("particle_10");
-		this.particle_11 = root.getChild("particle_11");
-		this.particle_12 = root.getChild("particle_12");
+
+	public BronzeShamanModel(ModelPart root) {
+		this.bronze_shaman = root.getChild("bronze_shaman");
+		this.head = bronze_shaman.getChild("head");
 	}
 	public static TexturedModelData getTexturedModelData() {
 		ModelData modelData = new ModelData();
 		ModelPartData modelPartData = modelData.getRoot();
-		ModelPartData bronze_shaman_entity = modelPartData.addChild("bronze_shaman_entity", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, 24.0F, 0.0F));
+		ModelPartData bronze_shaman = modelPartData.addChild("bronze_shaman", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, 24.0F, 0.0F));
 
-		ModelPartData head = bronze_shaman_entity.addChild("head", ModelPartBuilder.create().uv(0, 0).cuboid(-4.0F, -8.0F, -4.0F, 8.0F, 8.0F, 8.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, -24.0F, 0.0F));
+		ModelPartData head = bronze_shaman.addChild("head", ModelPartBuilder.create().uv(0, 0).cuboid(-4.0F, -8.0F, -4.0F, 8.0F, 8.0F, 8.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, -24.0F, 0.0F));
 
 		ModelPartData hat = head.addChild("hat", ModelPartBuilder.create().uv(24, 42).cuboid(-5.0F, -10.0F, -5.0F, 10.0F, 2.0F, 10.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, 0.0F, 0.0F));
 
@@ -93,11 +35,11 @@ public class modded_entity extends EntityModel<Entity> {
 
 		ModelPartData base2_r1 = hat.addChild("base2_r1", ModelPartBuilder.create().uv(34, 31).cuboid(-7.0F, -4.0F, -1.0F, 8.0F, 4.0F, 7.0F, new Dilation(0.0F)), ModelTransform.of(3.0F, -9.0F, -2.0F, -0.0873F, 0.0F, 0.0436F));
 
-		ModelPartData body = bronze_shaman_entity.addChild("body", ModelPartBuilder.create().uv(0, 16).cuboid(-4.0F, 0.0F, -2.0F, 8.0F, 12.0F, 4.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, -24.0F, 0.0F));
+		ModelPartData body = bronze_shaman.addChild("body", ModelPartBuilder.create().uv(0, 16).cuboid(-4.0F, 0.0F, -2.0F, 8.0F, 12.0F, 4.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, -24.0F, 0.0F));
 
-		ModelPartData left_arm = bronze_shaman_entity.addChild("left_arm", ModelPartBuilder.create().uv(24, 16).cuboid(-1.0F, -2.0F, -2.0F, 4.0F, 12.0F, 4.0F, new Dilation(0.0F)), ModelTransform.pivot(5.0F, -22.0F, 0.0F));
+		ModelPartData left_arm = bronze_shaman.addChild("left_arm", ModelPartBuilder.create().uv(24, 16).cuboid(-1.0F, -2.0F, -2.0F, 4.0F, 12.0F, 4.0F, new Dilation(0.0F)), ModelTransform.pivot(5.0F, -22.0F, 0.0F));
 
-		ModelPartData right_arm = bronze_shaman_entity.addChild("right_arm", ModelPartBuilder.create(), ModelTransform.pivot(-5.0F, -22.0F, 0.0F));
+		ModelPartData right_arm = bronze_shaman.addChild("right_arm", ModelPartBuilder.create(), ModelTransform.pivot(-5.0F, -22.0F, 0.0F));
 
 		ModelPartData right_arm_r1 = right_arm.addChild("right_arm_r1", ModelPartBuilder.create().uv(24, 16).mirrored().cuboid(-8.0F, -24.0F, -2.0F, 4.0F, 12.0F, 4.0F, new Dilation(0.0F)).mirrored(false), ModelTransform.of(5.0F, 11.0F, -19.0F, -1.0472F, 0.0F, 0.0F));
 
@@ -119,11 +61,11 @@ public class modded_entity extends EntityModel<Entity> {
 
 		ModelPartData arch1_r1 = staff_arch.addChild("arch1_r1", ModelPartBuilder.create().uv(9, 57).cuboid(-1.0F, -5.0F, -1.0F, 2.0F, 5.0F, 2.0F, new Dilation(0.0F)), ModelTransform.of(-6.0F, -24.0F, -10.0F, -1.1345F, 0.0F, 0.0F));
 
-		ModelPartData left_leg = bronze_shaman_entity.addChild("left_leg", ModelPartBuilder.create().uv(32, 0).mirrored().cuboid(-1.9F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, new Dilation(0.0F)).mirrored(false), ModelTransform.pivot(1.9F, -12.0F, 0.0F));
+		ModelPartData left_leg = bronze_shaman.addChild("left_leg", ModelPartBuilder.create().uv(32, 0).mirrored().cuboid(-1.9F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, new Dilation(0.0F)).mirrored(false), ModelTransform.pivot(1.9F, -12.0F, 0.0F));
 
-		ModelPartData right_leg = bronze_shaman_entity.addChild("right_leg", ModelPartBuilder.create().uv(32, 0).cuboid(-2.1F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, new Dilation(0.0F)), ModelTransform.pivot(-1.9F, -12.0F, 0.0F));
+		ModelPartData right_leg = bronze_shaman.addChild("right_leg", ModelPartBuilder.create().uv(32, 0).cuboid(-2.1F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, new Dilation(0.0F)), ModelTransform.pivot(-1.9F, -12.0F, 0.0F));
 
-		ModelPartData healing = bronze_shaman_entity.addChild("healing", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, -19.0F, 0.0F));
+		ModelPartData healing = bronze_shaman.addChild("healing", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, -19.0F, 0.0F));
 
 		ModelPartData circle = healing.addChild("circle", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, 0.0F, 0.0F));
 
@@ -169,7 +111,7 @@ public class modded_entity extends EntityModel<Entity> {
 
 		ModelPartData particle_6 = healing_particles.addChild("particle_6", ModelPartBuilder.create().uv(58, 1).cuboid(0.0F, -1.0F, -1.0F, 1.0F, 1.0F, 1.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, 0.0F, 0.0F));
 
-		ModelPartData attacking = bronze_shaman_entity.addChild("attacking", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, -17.0F, 0.0F));
+		ModelPartData attacking = bronze_shaman.addChild("attacking", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, -17.0F, 0.0F));
 
 		ModelPartData attacking_particles = attacking.addChild("attacking_particles", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, 0.0F, 0.0F));
 
@@ -186,12 +128,34 @@ public class modded_entity extends EntityModel<Entity> {
 		ModelPartData particle_12 = attacking_particles.addChild("particle_12", ModelPartBuilder.create().uv(60, 6).cuboid(0.0F, -1.0F, -1.0F, 1.0F, 1.0F, 1.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, 0.0F, 0.0F));
 		return TexturedModelData.of(modelData, 64, 64);
 	}
+
 	@Override
-	public void setAngles(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+	public void setAngles(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+		this.getPart().traverse().forEach(ModelPart::resetTransform);
+		this.setHeadAngles(entity.getHeadYaw(), headPitch);
+
+		this.animateMovement(ModAnimations.BRONZE_SHAMAN_WALKING, limbSwing, limbSwingAmount, 2f, 2.5f);
+		this.updateAnimation(entity.idleAnimationState, ModAnimations.BRONZE_SHAMAN_IDLE, ageInTicks, 1f);
+		this.updateAnimation(entity.attackAnimationState, ModAnimations.BRONZE_SHAMAN_ATTACKING, ageInTicks, 1f);
+		this.updateAnimation(entity.healAnimationState, ModAnimations.BRONZE_SHAMAN_HEALING, ageInTicks, 1f);
+
 	}
+
+	private void setHeadAngles(float headYaw, float headPitch) {
+		headYaw = MathHelper.clamp(headYaw, -30.0F, 30.0F);
+		headPitch = MathHelper.clamp(headPitch, -25.0F, 45.0F);
+
+		this.head.yaw = headYaw * 0.017453292F;
+		this.head.pitch = headPitch * 0.017453292F;
+	}
+
 	@Override
 	public void render(MatrixStack matrices, VertexConsumer vertexConsumer, int light, int overlay, float red, float green, float blue, float alpha) {
-		bronze_shaman_entity.render(matrices, vertexConsumer, light, overlay, red, green, blue, alpha);
+		bronze_shaman.render(matrices, vertexConsumer, light, overlay, red, green, blue, alpha);
+	}
+
+	@Override
+	public ModelPart getPart() {
+		return bronze_shaman;
 	}
 }
- **/

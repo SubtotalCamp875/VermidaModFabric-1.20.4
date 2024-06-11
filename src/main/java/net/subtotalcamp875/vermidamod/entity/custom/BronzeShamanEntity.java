@@ -1,8 +1,7 @@
 package net.subtotalcamp875.vermidamod.entity.custom;
 
-import net.minecraft.entity.AnimationState;
-import net.minecraft.entity.EntityPose;
-import net.minecraft.entity.EntityType;
+import net.minecraft.entity.*;
+import net.minecraft.entity.ai.RangedAttackMob;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
@@ -13,15 +12,22 @@ import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.projectile.thrown.SnowballEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.world.World;
+import net.subtotalcamp875.vermidamod.entity.ai.BronzeShamanAttackSpellGoal;
+import net.subtotalcamp875.vermidamod.entity.ai.BronzeShamanHealSpellGoal;
 import net.subtotalcamp875.vermidamod.entity.ai.LeatherSummonAttackGoal;
+import net.subtotalcamp875.vermidamod.item.ModItems;
 import org.jetbrains.annotations.Nullable;
 
-public class LeatherSummonEntity extends HostileEntity {
+public class BronzeShamanEntity extends HostileEntity implements RangedAttackMob {
     private static final TrackedData<Boolean> ATTACKING =
-            DataTracker.registerData(LeatherSummonEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
+            DataTracker.registerData(BronzeShamanEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
+    private static final TrackedData<Boolean> HEALING =
+            DataTracker.registerData(BronzeShamanEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
 
     public final AnimationState idleAnimationState = new AnimationState();
     private int idleAnimationTimeout = 0;
@@ -29,14 +35,17 @@ public class LeatherSummonEntity extends HostileEntity {
     public final AnimationState attackAnimationState = new AnimationState();
     public int attackAnimationTimeout = 0;
 
-    public LeatherSummonEntity(EntityType<? extends HostileEntity> entityType, World world) {
+    public final AnimationState healAnimationState = new AnimationState();
+    public int healAnimationTimeout = 0;
+
+    public BronzeShamanEntity(EntityType<? extends HostileEntity> entityType, World world) {
         super(entityType, world);
         this.dropXp();
     }
 
     @Override
     public int getXpToDrop() {
-        return 20;
+        return 10;
     }
 
     private void setupAnimationStates() {
@@ -48,14 +57,33 @@ public class LeatherSummonEntity extends HostileEntity {
         }
 
         if(this.isAttacking() && attackAnimationTimeout <= 0) {
-            attackAnimationTimeout = 30;
+            attackAnimationTimeout = 80;
             attackAnimationState.start(this.age);
+            this.setPose(EntityPose.SHOOTING);
+            this.idleAnimationState.stop();
+            this.idleAnimationTimeout = this.random.nextInt(40) + 80;
         } else {
             --this.attackAnimationTimeout;
         }
 
         if(!this.isAttacking()) {
             attackAnimationState.stop();
+            this.setPose(EntityPose.STANDING);
+        }
+
+        if(this.isHealing() && healAnimationTimeout <= 0) {
+            healAnimationTimeout = 80;
+            healAnimationState.start(this.age);
+            this.setPose(EntityPose.SHOOTING);
+            this.idleAnimationState.stop();
+            this.idleAnimationTimeout = this.random.nextInt(40) + 80;
+        } else {
+            --this.healAnimationTimeout;
+        }
+
+        if(!this.isHealing()) {
+            healAnimationState.stop();
+            this.setPose(EntityPose.STANDING);
         }
     }
 
@@ -76,29 +104,35 @@ public class LeatherSummonEntity extends HostileEntity {
     @Override
     protected void initGoals() {
         this.goalSelector.add(0, new SwimGoal(this));
+        this.goalSelector.add(1, new FleeEntityGoal<PlayerEntity>(this, PlayerEntity.class, 2.0f, 0.6, 1.0));
 
-        this.goalSelector.add(1, new LeatherSummonAttackGoal(this, 1.0, true));
-        this.goalSelector.add(2, new GoToWalkTargetGoal(this, 1.0));
+        this.goalSelector.add(2, new BronzeShamanHealSpellGoal(this, 1.0, 80, 25));
+        this.goalSelector.add(3, new BronzeShamanAttackSpellGoal(this, 1.0, 80, 35));
+        this.goalSelector.add(4, new WanderAroundGoal(this, 1.0, 32));
         this.goalSelector.add(3, new LookAtEntityGoal(this, PlayerEntity.class, 32.0F));
 
         this.targetSelector.add(1, new RevengeGoal(this));
         this.targetSelector.add(2, new ActiveTargetGoal<PlayerEntity>((MobEntity)this, PlayerEntity.class, true));
-        this.goalSelector.add(4, new WanderAroundGoal(this, 1.0, 32));
+
     }
 
-    public static DefaultAttributeContainer.Builder createLeatherSummonAttributes() {
+    public static DefaultAttributeContainer.Builder createBronzeShamanAttributes() {
         return MobEntity.createMobAttributes()
-                .add(EntityAttributes.GENERIC_MAX_HEALTH, 500.0)
-                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.6)
-                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 15.0)
-                .add(EntityAttributes.GENERIC_ATTACK_KNOCKBACK, 7.0)
-                .add(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE, 0.5)
-                .add(EntityAttributes.GENERIC_ATTACK_SPEED, 0.2)
-                .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 32.0F);
+                .add(EntityAttributes.GENERIC_MAX_HEALTH, 40.0)
+                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.2)
+                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 0.0)
+                .add(EntityAttributes.GENERIC_ATTACK_KNOCKBACK, 0.0)
+                .add(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE, 0.1)
+                .add(EntityAttributes.GENERIC_ATTACK_SPEED, 0.5)
+                .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 15.0F);
     }
 
     public void setAttacking(boolean attacking) {
         this.dataTracker.set(ATTACKING, attacking);
+    }
+
+    public void setHealing(boolean healing) {
+        this.dataTracker.set(HEALING, healing);
     }
 
     @Override
@@ -106,10 +140,16 @@ public class LeatherSummonEntity extends HostileEntity {
         return this.dataTracker.get(ATTACKING);
     }
 
+    public boolean isHealing() {
+        return this.dataTracker.get(HEALING);
+    }
+
+
     @Override
     protected void initDataTracker() {
         super.initDataTracker();
         this.dataTracker.startTracking(ATTACKING, false);
+        this.dataTracker.startTracking(HEALING, false);
     }
 
     @Nullable
@@ -128,5 +168,9 @@ public class LeatherSummonEntity extends HostileEntity {
     @Override
     protected SoundEvent getDeathSound() {
         return SoundEvents.BLOCK_LAVA_EXTINGUISH;
+    }
+
+    @Override
+    public void shootAt(LivingEntity target, float pullProgress) {
     }
 }

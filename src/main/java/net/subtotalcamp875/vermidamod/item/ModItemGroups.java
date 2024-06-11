@@ -54,6 +54,7 @@ public class ModItemGroups {
                         entries.add(ModBlocks.BLOOD_CONDENSING_STATION_BLOCK);
 
                         entries.add(ModItems.LEATHER_SUMMON_SPAWN_EGG);
+                        entries.add(ModItems.BRONZE_SHAMAN_SPAWN_EGG);
 
                     }).build());
 

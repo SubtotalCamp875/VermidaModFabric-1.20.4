@@ -13,6 +13,7 @@ import net.subtotalcamp875.vermidamod.entity.custom.LeatherSummonEntity;
 public class LeatherSummonModel<T extends LeatherSummonEntity> extends SinglePartEntityModel<T> {
 	private final ModelPart leather_summon;
 	private final ModelPart head;
+
 	public LeatherSummonModel(ModelPart root) {
 		this.leather_summon = root.getChild("leather_summon");
         this.head = leather_summon.getChild("head");

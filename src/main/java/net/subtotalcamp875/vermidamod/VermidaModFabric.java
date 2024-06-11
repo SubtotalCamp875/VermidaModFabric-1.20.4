@@ -9,6 +9,7 @@ import net.subtotalcamp875.vermidamod.block.entity.ModBlockEntities;
 import net.subtotalcamp875.vermidamod.enchantment.ModEnchantments;
 import net.subtotalcamp875.vermidamod.enchantment.ModEnchantments;
 import net.subtotalcamp875.vermidamod.entity.ModEntities;
+import net.subtotalcamp875.vermidamod.entity.custom.BronzeShamanEntity;
 import net.subtotalcamp875.vermidamod.entity.custom.LeatherSummonEntity;
 import net.subtotalcamp875.vermidamod.item.ModItemGroups;
 import net.subtotalcamp875.vermidamod.item.ModItems;
@@ -37,5 +38,6 @@ public class VermidaModFabric implements ModInitializer {
 
 
 		FabricDefaultAttributeRegistry.register(ModEntities.LEATHER_SUMMON, LeatherSummonEntity.createLeatherSummonAttributes());
+		FabricDefaultAttributeRegistry.register(ModEntities.BRONZE_SHAMAN, BronzeShamanEntity.createBronzeShamanAttributes());
 	}
 }
