@@ -3,14 +3,12 @@ package net.subtotalcamp875.vermidamod.item;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.item.ArmorItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroups;
-import net.minecraft.item.MusicDiscItem;
+import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.subtotalcamp875.vermidamod.VermidaModFabric;
 import net.minecraft.util.Identifier;
+import net.subtotalcamp875.vermidamod.entity.ModEntities;
 import net.subtotalcamp875.vermidamod.entity.custom.MagicOrbProjectileEntity;
 import net.subtotalcamp875.vermidamod.item.custom.MagicOrbProjectileItem;
 import net.subtotalcamp875.vermidamod.item.custom.MetalDetectorItem;
@@ -65,7 +63,8 @@ public class ModItems {
     public static final Item BRONZE_SHAMAN_CAMP_AMBIENCE_MUSIC_DISC   = registerItem("bronze_shaman_camp_ambience_music_disc",
             new MusicDiscItem(6, ModSounds.BRONZE_SHAMAN_CAMP_AMBIENCE, new FabricItemSettings().maxCount(1), 3300));
 
-
+    public static final Item LEATHER_SUMMON_SPAWN_EGG = registerItem("leather_summon_spawn_egg",
+            new SpawnEggItem(ModEntities.LEATHER_SUMMON, 0xa86518, 0x3b260f, new FabricItemSettings()));
 
 
     private static void addItemsToIngredientItemGroup(FabricItemGroupEntries entries) {

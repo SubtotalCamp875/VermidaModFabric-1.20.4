@@ -53,6 +53,7 @@ public class ModItemGroups {
                         entries.add(ModBlocks.SEAL_BREAKER_BLOCK);
                         entries.add(ModBlocks.BLOOD_CONDENSING_STATION_BLOCK);
 
+                        entries.add(ModItems.LEATHER_SUMMON_SPAWN_EGG);
 
                     }).build());
 
