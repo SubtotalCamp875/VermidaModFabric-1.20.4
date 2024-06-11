@@ -11,6 +11,8 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.subtotalcamp875.vermidamod.VermidaModFabric;
 import net.minecraft.util.Identifier;
+import net.subtotalcamp875.vermidamod.entity.custom.MagicOrbProjectileEntity;
+import net.subtotalcamp875.vermidamod.item.custom.MagicOrbProjectileItem;
 import net.subtotalcamp875.vermidamod.item.custom.MetalDetectorItem;
 import net.subtotalcamp875.vermidamod.sound.ModSounds;
 
@@ -52,7 +54,7 @@ public class ModItems {
             new ArmorItem(ModArmorMaterials.SUMMONING_CRYSTAL, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
     public static final Item MAGIC_BOOTS = registerItem("magic_boots",
             new ArmorItem(ModArmorMaterials.SUMMONING_CRYSTAL, ArmorItem.Type.BOOTS, new FabricItemSettings()));
-
+    public static final Item MAGIC_ORB = registerItem("magic_orb", new MagicOrbProjectileItem(new FabricItemSettings()));
 
     public static final Item GLASS_DUST = registerItem("glass_dust", new Item(new FabricItemSettings()));
     public static final Item SCROLL = registerItem("scroll", new Item(new FabricItemSettings()));
@@ -62,6 +64,8 @@ public class ModItems {
             new MusicDiscItem(6, ModSounds.ECHOS_OF_SUMMONS, new FabricItemSettings().maxCount(1), 2120));
     public static final Item BRONZE_SHAMAN_CAMP_AMBIENCE_MUSIC_DISC   = registerItem("bronze_shaman_camp_ambience_music_disc",
             new MusicDiscItem(6, ModSounds.BRONZE_SHAMAN_CAMP_AMBIENCE, new FabricItemSettings().maxCount(1), 3300));
+
+
 
 
     private static void addItemsToIngredientItemGroup(FabricItemGroupEntries entries) {

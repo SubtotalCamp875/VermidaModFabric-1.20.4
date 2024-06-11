@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_extremely_condensed_shaman_blood": {
+    "has_summoning_crystal": {
       "conditions": {
         "items": [
           {
             "items": [
-              "vermida_mod:extremely_condensed_shaman_blood"
+              "vermida_mod:summoning_crystal"
             ]
           }
         ]
@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:summoning_crystal_from_glass_and_blood"
+        "recipe": "minecraft:summoning_crystal_from_summoning_crystal_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -23,12 +23,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_extremely_condensed_shaman_blood"
+      "has_summoning_crystal"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:summoning_crystal_from_glass_and_blood"
+      "minecraft:summoning_crystal_from_summoning_crystal_block"
     ]
   }
 }

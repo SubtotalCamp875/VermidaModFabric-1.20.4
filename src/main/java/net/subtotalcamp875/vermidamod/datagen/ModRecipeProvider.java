@@ -29,6 +29,12 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(ModItems.SUMMONING_CRYSTAL), conditionsFromItem(ModItems.SUMMONING_CRYSTAL))
                 .offerTo(exporter, new Identifier("summoning_crystal_block_from_summoning_crystal"));
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.SUMMONING_CRYSTAL, 9)
+                .pattern("S")
+                .input('S', ModBlocks.SUMMONING_CRYSTAL_BLOCK)
+                .criterion(hasItem(ModItems.SUMMONING_CRYSTAL), conditionsFromItem(ModItems.SUMMONING_CRYSTAL))
+                .offerTo(exporter, new Identifier("summoning_crystal_from_summoning_crystal_block"));
+
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.SUMMONING_CRYSTAL, 2)
                 .pattern("GEG")
                 .pattern("EBE")
@@ -36,7 +42,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('E', ModItems.SUMMONING_ESSENCE)
                 .input('B', ModItems.CONDENSED_SHAMAN_BLOOD)
                 .input('G', Blocks.GLASS)
-                .criterion(hasItem(ModItems.SUMMONING_CRYSTAL), conditionsFromItem(ModItems.SUMMONING_CRYSTAL))
+                .criterion(hasItem(ModItems.SUMMONING_ESSENCE), conditionsFromItem(ModItems.SUMMONING_ESSENCE))
                 .offerTo(exporter, new Identifier("summoning_crystal_from_essence_and_blood"));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.SUMMONING_CRYSTAL, 8)
@@ -45,7 +51,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .pattern(" G ")
                 .input('B', ModItems.EXTREMELY_CONDENSED_SHAMAN_BLOOD)
                 .input('G', Blocks.GLASS)
-                .criterion(hasItem(ModItems.SUMMONING_CRYSTAL), conditionsFromItem(ModItems.SUMMONING_CRYSTAL))
+                .criterion(hasItem(ModItems.EXTREMELY_CONDENSED_SHAMAN_BLOOD), conditionsFromItem(ModItems.EXTREMELY_CONDENSED_SHAMAN_BLOOD))
                 .offerTo(exporter, new Identifier("summoning_crystal_from_glass_and_blood"));
 
 

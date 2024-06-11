@@ -53,5 +53,6 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.MAGIC_CHESTPLATE));
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.MAGIC_LEGGINGS));
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.MAGIC_BOOTS));
+        itemModelGenerator.register(ModItems.MAGIC_ORB, Models.GENERATED);
     }
 }

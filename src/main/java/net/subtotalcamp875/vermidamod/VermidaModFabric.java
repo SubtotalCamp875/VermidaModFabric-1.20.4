@@ -7,6 +7,7 @@ import net.subtotalcamp875.vermidamod.block.ModBlocks;
 import net.subtotalcamp875.vermidamod.block.entity.ModBlockEntities;
 import net.subtotalcamp875.vermidamod.enchantment.ModEnchantments;
 import net.subtotalcamp875.vermidamod.enchantment.ModEnchantments;
+import net.subtotalcamp875.vermidamod.entity.ModEntities;
 import net.subtotalcamp875.vermidamod.item.ModItemGroups;
 import net.subtotalcamp875.vermidamod.item.ModItems;
 import net.subtotalcamp875.vermidamod.screen.ModScreenHandlers;
@@ -31,5 +32,6 @@ public class VermidaModFabric implements ModInitializer {
 
 		ModBlockEntities.registerBlockEntities();
 		ModScreenHandlers.registerScreenHandlers();
+
 	}
 }

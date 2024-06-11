@@ -24,6 +24,8 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
     public void generate() {
         addDrop(ModBlocks.SUMMONING_CRYSTAL_BLOCK);
         addDrop(ModBlocks.BRONZE_REFINER_BLOCK);
+        addDrop(ModBlocks.SEAL_BREAKER_BLOCK);
+        addDrop(ModBlocks.BLOOD_CONDENSING_STATION_BLOCK);
     }
 
     public LootTable.Builder copperLikeOreDrops(Block drop, Item item) {

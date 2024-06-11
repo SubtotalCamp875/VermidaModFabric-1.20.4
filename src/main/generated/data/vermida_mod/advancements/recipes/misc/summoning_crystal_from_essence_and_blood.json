@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_summoning_crystal": {
+    "has_summoning_essence": {
       "conditions": {
         "items": [
           {
             "items": [
-              "vermida_mod:summoning_crystal"
+              "vermida_mod:summoning_essence"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_summoning_crystal"
+      "has_summoning_essence"
     ]
   ],
   "rewards": {
