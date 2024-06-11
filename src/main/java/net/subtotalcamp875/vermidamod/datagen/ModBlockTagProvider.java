@@ -31,7 +31,9 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
                 .add(ModBlocks.SUMMONING_CRYSTAL_BLOCK)
-                .add(ModBlocks.BRONZE_REFINER_BLOCK);
+                .add(ModBlocks.BRONZE_REFINER_BLOCK)
+                .add(ModBlocks.BLOOD_CONDENSING_STATION_BLOCK)
+                .add(ModBlocks.SEAL_BREAKER_BLOCK);
 
         getOrCreateTagBuilder(BlockTags.NEEDS_STONE_TOOL)
                 .add(ModBlocks.SUMMONING_CRYSTAL_BLOCK)

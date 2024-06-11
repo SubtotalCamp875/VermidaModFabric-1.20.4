@@ -1,4 +1,4 @@
-// 1.20.4	2024-06-11T16:28:46.6950784	VermidaModFabric-1.20.4/Recipes
+// 1.20.4	2024-06-11T17:42:18.9590512	VermidaModFabric-1.20.4/Recipes
 65cf27b4a0a9380fd54b0b99753eaabd7b669ae4 data\vermida_mod\advancements\recipes\misc\summoning_crystal_from_essence_and_blood.json
 d76360db93d1a754f8dc3080b6151de70151771c data\vermida_mod\advancements\recipes\misc\summoning_crystal_from_summoning_crystal_block.json
 97171c73331b3c311875a4f43181bfebd71ee11f data\vermida_mod\advancements\recipes\misc\glass_dust.json
@@ -11,8 +11,8 @@ e79e59b20fa2eb890588161532431581887eea1e data\vermida_mod\recipes\slightly_conde
 5f31edf1e2f82c5f016e4b3bbaf8fd86c74218be data\vermida_mod\advancements\recipes\misc\compact_bronze_core.json
 191bd3c4bc9ca16989b9b6e9b328be351a40628b data\vermida_mod\recipes\very_condensed_shaman_blood.json
 66974a86326c1d395ffaa74cb5cf47a7b6b2e566 data\vermida_mod\recipes\glass_dust.json
-8fa7e35985aa7877c718abb517f6a1381cadf3e8 data\vermida_mod\advancements\recipes\misc\summoning_crystal_block_from_summoning_crystal.json
 0f6953ff83e5e5453d46f37a4eb452cf6f188382 data\vermida_mod\recipes\summoning_crystal_from_glass_and_blood.json
+8fa7e35985aa7877c718abb517f6a1381cadf3e8 data\vermida_mod\advancements\recipes\misc\summoning_crystal_block_from_summoning_crystal.json
 1d3500c1ab0bece6c67e6ef6c0778df95d05fb34 data\vermida_mod\advancements\recipes\misc\reinforced_bronze_core.json
 d54d01b92848eb5bf03c016b9a5e6daf8f20ac03 data\vermida_mod\advancements\recipes\misc\magic_boots.json
 e71b76e27319a16f6c462359a426ca414d046545 data\vermida_mod\recipes\extremely_condensed_shaman_blood.json

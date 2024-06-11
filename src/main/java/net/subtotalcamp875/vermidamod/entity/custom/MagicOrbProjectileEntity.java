@@ -45,11 +45,13 @@ public class MagicOrbProjectileEntity extends ThrownItemEntity {
     @Override
     protected void onEntityHit(EntityHitResult entityHitResult) {
         super.onEntityHit(entityHitResult);
-        Entity entity = this.getOwner();
+        Entity entity = entityHitResult.getEntity();
         if (entity instanceof LivingEntity) {
             LivingEntity livingEntity = (LivingEntity) entity;
-            entityHitResult.getEntity().damage(this.getDamageSources().lightningBolt(), 25.0f);
+            if (!(entity instanceof BronzeShamanEntity)) {
+                entityHitResult.getEntity().damage(this.getDamageSources().lightningBolt(), 25.0f);
+            }
         }
-        //if (!(entity instanceof BronzeShamanEntity)) {}
+
     }
 }

@@ -52,11 +52,14 @@ public class BronzeShamanAttackSpellGoal extends ProjectileAttackGoal {
     }
 
     private boolean isEnemyWithinAttackDistance(LivingEntity pEnemy) {
+        if (pEnemy == null) {
+            return false;
+        }
         return this.entity.distanceTo(pEnemy) <= 35f; // TODO
     }
 
     protected void resetAttackCooldown() {
-        this.ticksUntilNextAttack = this.getTickCount(attackDelay * 8);
+        this.ticksUntilNextAttack = this.getTickCount(attackDelay * 5);
     }
 
     protected boolean isTimeToStartAttackAnimation() {
@@ -100,7 +103,7 @@ public class BronzeShamanAttackSpellGoal extends ProjectileAttackGoal {
         if(shouldCountTillNextAttack) {
             this.ticksUntilNextAttack = Math.max(this.ticksUntilNextAttack - 1, 0);
         }
-        if (ticksUntilNextAttack == 140) {
+        if (ticksUntilNextAttack == 80) {
             this.entity.setAttacking(false);
         }
         this.checkAndPerformAttack(this.entity.getTarget());

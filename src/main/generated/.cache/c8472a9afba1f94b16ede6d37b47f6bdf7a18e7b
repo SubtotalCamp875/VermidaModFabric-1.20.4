@@ -1,4 +1,4 @@
-// 1.20.4	2024-06-11T16:28:46.698081	VermidaModFabric-1.20.4/Model Definitions
+// 1.20.4	2024-06-11T17:42:18.9630508	VermidaModFabric-1.20.4/Model Definitions
 e86e87cbe8cf19081dac1f8c4b06213c817078e8 assets\vermida_mod\models\item\magic_boots.json
 0bc20575cb85ec417443067fb3e254579095a1a2 assets\vermida_mod\models\item\magic_leggings_gold_trim.json
 1ae160489ba30c1232df2f20a5abb193e0a07028 assets\vermida_mod\models\block\bronze_refiner_block.json
@@ -23,8 +23,8 @@ df546f4582a62f78a338497e2b44c57e5bb05e00 assets\vermida_mod\models\item\magic_le
 c2926f2b39bc2efbf562273bb4d16b8ab45fabf2 assets\vermida_mod\models\item\magic_boots_iron_trim.json
 ca43c1b57b49f80a3089507a563ec204449a0aef assets\vermida_mod\models\item\magic_leggings.json
 23d0d0edc497fbe9226153d6dac9edffad125159 assets\vermida_mod\models\item\magic_helmet_quartz_trim.json
-6cd9286e1ff54f95475dcce9e1c6813f69c8dd10 assets\vermida_mod\models\item\slightly_condensed_shaman_blood.json
 629909dace79e9b4830b017586282af72e815992 assets\vermida_mod\models\item\bronze_refiner_block.json
+6cd9286e1ff54f95475dcce9e1c6813f69c8dd10 assets\vermida_mod\models\item\slightly_condensed_shaman_blood.json
 624d89f2c6a2699538dd7b5d5acb694d80848b10 assets\vermida_mod\models\item\magic_helmet_diamond_trim.json
 8a50930a7b13d698c908811c1fe5febc853e2efa assets\vermida_mod\models\item\reinforced_bronze_core.json
 a0e90ec049c54243d6a38e51cb476c053e0ed025 assets\vermida_mod\models\item\magic_helmet_iron_trim.json
